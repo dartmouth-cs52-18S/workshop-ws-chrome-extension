@@ -44,14 +44,25 @@ Any necessary setup steps
 Now it's time to upload our extension to chrome!
 
 * Go to [chrome://extensions](chrome://extensions) and make sure *Developer mode* in the upper right hand corner is toggled on.
+![](readme_images/developer-mode.png)
 
 * Click on *Load Unpacked* and select the directory that contains your chrome extension.
 
-:white_check_mark: Check-in! Navigate to any [website](cs52.me) and inspect the page. In the console, your previous ```console.log``` statement should now appear!
+:white_check_mark: Check-in! Navigate to any [website](http://cs52.me/) and inspect the page. In the console, your previous ```console.log``` statement should now appear!
+
+### Find image elements to replace
+Let's take a moment to understand what we're looking for!
+In the console of the same page you just opened type
+```javascript
+  let imgs = document.getElementsByTagName('img');
+```
+Call ```imgs``` and open the HTMLCollection to view all the images on the page.
+Expand any image number to view the attributes of the image. Scroll down until you see ```src``` (attributes should be alphabetical). We will be using the ```img``` tag to find and replace the source of each images with your own pictures!
+
+Now you get to select your images! We have provided some default images in the img folder, but feel free to replace them with your own!
 
 
-
-
+# Tim's Instructions for README
 
 
 
