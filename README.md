@@ -84,7 +84,7 @@ We want to gather all of the images on the page into a variable, just like we di
   let imgs = document.getElementsByTagName('img');
 ```
 
-We need an array containing the filenames of all of our images. Let's create that! Somewhere before you create the `imgs` variable, create a variable that references an array containing your images:
+We need an array containing the filenames of all of our images. Let's create that! Somewhere before you create the `imgs` variable, create a variable that references an array containing your image filenames:
 
 ```Javascript
 let filenames = [
