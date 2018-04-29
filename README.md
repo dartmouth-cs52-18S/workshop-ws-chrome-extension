@@ -10,6 +10,12 @@ Chrome extensions allow us to personalize our web-browser, it's time to kittenif
 
 <img src="https://media.giphy.com/media/1zlUuEFrTTz9n8XGCW/giphy.gif" width="800" height="400" />
 
+In order to make google chrome sufficiently kitten-saturated, we'll do the following:
+* [ ] Replace all the image elements with kitten images
+* [ ] Replace text of choice on webpages
+* [ ] Create a pretty button to toggle your extension on and off
+All of this will be done with just a javascript file, a manifest.json, and lots of images!
+
 ## Setup
 
 Any necessary setup steps
