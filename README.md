@@ -27,7 +27,7 @@ Any necessary setup steps
         "matches": [
           "<all_urls>"
         ],
-        "js": ["kitten.js"]
+        "js": ["tim.js"]
       }
     ]
   }
@@ -36,7 +36,7 @@ Any necessary setup steps
 Let's take a step back and examine what's going on here. Chrome extensions can have background scripts and/or content scripts. Background scripts run in the background and can be always running or can be idle and only run when triggered. Content scripts run in the context of the web page that you are currently on. By setting `matches` to `<all_urls>`, we are saying that we want our extension to run on all web pages. The `js` part of the manifest lists all of the javascript files that we will be using as part of the content script.
 
 ### Add some Javascript!
-* Create a new file ```kitten.js```
+* Create a new file ```tim.js```
 * Add a ```console.log``` statement so we can ensure it's working.
 ```Javascript
   console.log('Where\'s Tim???');
@@ -78,7 +78,7 @@ This tells the manifest that we want the browser to be able to access these all 
 
 We've played around in the inspector and understand what we are looking for. Let's code it up in our extension project.
 
-We want to gather all of the images on the page into a variable, just like we did in the inspector. Add the following to `kitten.js`:
+We want to gather all of the images on the page into a variable, just like we did in the inspector. Add the following to `tim.js`:
 
 ```javascript
   let imgs = document.getElementsByTagName('img');
@@ -88,9 +88,11 @@ We need an array containing the filenames of all of our images. Let's create tha
 
 ```Javascript
 let filenames = [
-  "img/kitten1.jpg",
-  "img/kitten2.jpg",
-  "img/kitten2.jpg"
+  "img/tim1.jpg",
+  "img/tim2.jpg",
+  "img/tim3.jpg"
+  "img/tim4.jpg"
+  "img/tim5.jpg"
 ]
 ```
 
@@ -124,7 +126,6 @@ What we are doing here is generating a random index into our array (the floor fu
 Reload the chrome extension and navigate to a webpage. All the images there should be replaced by yours!
 
 # Tim's Instructions for README
-
 
 
 * Explanations of the what **and** the why behind each step. Try to include:
