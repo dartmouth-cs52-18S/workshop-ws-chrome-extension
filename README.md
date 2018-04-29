@@ -8,7 +8,7 @@ Brief motivation here as well as in presentation
 
 Chrome extensions allow us to personalize our web-browser, it's time to kittenify the way we experience the internet if we so choose. With just a little bit of code, the sometimes-scary internet can be a much cuter place. Just clicking our custom chrome extension button in the top right of our browser replaces all a website's images with images of kittens, or anything else you choose!
 
-![Alt Text](https://media.giphy.com/media/1zlUuEFrTTz9n8XGCW/giphy.gif)
+![Alt Text](<img src="https://media.giphy.com/media/1zlUuEFrTTz9n8XGCW/giphy.gif" width="40" height="40" />)
 
 ## Setup
 
