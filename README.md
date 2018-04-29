@@ -36,7 +36,10 @@ All of this will be done with just a javascript file, a manifest.json, and lots 
         ],
         "js": ["tim.js"]
       }
-    ]
+    ],
+    "icons": { "16": "icon16.png",
+           "48": "icon48.png",
+          "128": "icon128.png" }
   }
 ```
 
