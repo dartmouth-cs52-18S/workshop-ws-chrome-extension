@@ -134,6 +134,18 @@ What we are doing here is generating a random index into our array (the floor fu
 
 Reload the chrome extension and navigate to a webpage. All the images there should be replaced by yours!
 
+## Summary / What you Learned
+
+* [X] What goes in a chrome extension manifest
+* [X] Write some javascript for your chrome extensions
+* [X] Some quick and easy ways to bend complex webpages to your will
+* [X] How to add a pretty chrome extension button in your browser
+
+## Resources
+
+* Initial idea and starting code found at https://www.youtube.com/watch?v=8zMMOdI5SOk
+* A little starting example code: https://github.com/CodingTrain/website/tree/master/CodingChallenges/CC_82_Image_Chrome_Extension_The_Ex-Kitten-sion
+
 # Tim's Instructions for README
 
 
