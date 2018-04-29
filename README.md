@@ -17,7 +17,7 @@ All of this will be done with just a javascript file, a manifest.json, and lots 
 
 ## Setup
 
-Any necessary setup steps
+* Fork this repo, it contains some default photos for you to use.
 
 ## Step by Step
 
@@ -44,7 +44,7 @@ Let's take a step back and examine what's going on here. Chrome extensions can h
 
 ### Add some Javascript!
 * Create a new file ```tim.js```
-* Add a ```console.log``` statement so we can ensure it's working.
+* Add a ```console.log``` statement in this file, we will use this later to ensure it's working.
 ```Javascript
   console.log('Where\'s Tim???');
 ```
