@@ -135,6 +135,20 @@ What we are doing here is generating a random index into our array (the floor fu
 
 Reload the chrome extension and navigate to a webpage. All the images there should be replaced by yours!
 
+### Replacing text
+Let's do some more replacement and just replace some text.
+
+Add this to `kitten.js`:
+
+```javascript
+let text = document.querySelectorAll('p,li,h1,h2,h3,h4,span,div,b');
+      for (elt of text) {
+      elt.innerHTML = elt.innerHTML.replace(/\b([A-Z]\w*)\b/g,'Tim!');
+      }
+```
+
+We are grabbing all of the HTML structures that display text and replacing it similar to how we replaced images.
+
 ### Adding A button
 
 We want to be able to turn this extension on and off. Let's go into `manifest.json` and add the following code after `web_accessible_resources` and before `content_scripts`:
