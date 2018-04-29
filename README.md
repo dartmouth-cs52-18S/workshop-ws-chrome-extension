@@ -145,8 +145,8 @@ Add this to `tim.js`:
 
 ```javascript
 let text = document.querySelectorAll('p,li,h1,h2,h3,h4,span,div,b');
-      for (elt of text) {
-      elt.innerHTML = elt.innerHTML.replace(/\b([A-Z]\w*)\b/g,'Tim!');
+      for (element of text) {
+      element.innerHTML = element.innerHTML.replace(/\b([A-Z]\w*)\b/g,'Tim!');
       }
 ```
 
