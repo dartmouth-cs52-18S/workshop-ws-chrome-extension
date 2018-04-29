@@ -1,8 +1,6 @@
 # CS52 Workshops: Chrome Extensions
 
-![](http://i.giphy.com/eUh8NINbZf9Ys.gif)
-
-Brief motivation here as well as in presentation
+We don't need a new domain name to change the way we interact with the web! Today we'll be customizing our browser with a Chrome extension. Chrome extensions can serve as many functions as your imagination can create, but today we'll be using simple code to tweak the way you experience webpages of any degree of complexity.
 
 ## Overview
 
