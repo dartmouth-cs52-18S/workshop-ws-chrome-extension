@@ -135,6 +135,92 @@ What we are doing here is generating a random index into our array (the floor fu
 
 Reload the chrome extension and navigate to a webpage. All the images there should be replaced by yours!
 
+### Adding A button
+
+We want to be able to turn this extension on and off. Let's go into `manifest.json` and add the following code after `web_accessible_resources` and before `content_scripts`:
+
+```json
+"permissions": [
+      "tabs",
+      "storage",
+      "notifications",
+      "http://*/",
+      "https://*/"
+  ],
+```
+
+This tells the browser that your extension will be using various parts of the Google Chrome API, like storage and tabs.
+
+We will also be using a background script, so add the following to `manifest.json` after `content_scripts`:
+
+``` json
+"background": {
+    "scripts": ["background.js"]
+  },
+```
+
+We also want a default icon for our extension, so add the following after `background`:
+
+```json
+"browser_action": {
+    "default_icon": "img/tim.png"
+  }
+```
+
+Cool, we're done with the manifest! Let's move on to the background script. Create a `background.js` and add the following to it:
+
+```javascript
+chrome.browserAction.setBadgeText({ text: 'OFF' });
+```
+
+Here, we are making it so that our icon shows when the extension is on and off. Reload the extension in [chrome://extensions](chrome://extensions/), and the icon should show up with "OFF" over it.
+
+We will be using a boolean and using the value of the boolean as the switch between the on and off states. Add the following to `background.js` after what you already have:
+
+```javascript
+var enable=false;
+chrome.storage.sync.set({"enable": enable});
+```
+
+We are using chrome's storage to keep track of the state of this boolean. We want to change the state of this boolean when we click on the icon. Let's add an onClick Listener to the icon, passing into it a callback that gets executed:
+
+```Javascript
+chrome.browserAction.onClicked.addListener(function (tab) {
+  enable = !enable;
+  if (enable) {
+    chrome.browserAction.setBadgeText({ text: 'ON' });
+    chrome.tabs.executeScript(null, { file: 'kitten.js' });
+  } else {
+    chrome.browserAction.setBadgeText({ text: 'OFF' });
+    chrome.tabs.executeScript(tab.id, {code: 'window.location.reload();'});
+  }
+  chrome.storage.sync.set({"enable": enable}, function() {
+       console.log('Value is set to ' + enable);
+   });
+ });
+```
+
+We are passing a callback here that switches the state of our boolean variable. Based on the value of the variable, we set the badge text to on or off, and then either execute our `kitten.js` content script if it is on or reload the window if the extension is off. We then finally set the storage value to our newly changed boolean value.
+
+We need to also modify our `kitten.js` content script so that it only runs when the boolean value in storage is set to true. Let's hop over to `kitten.js` and add some modifications.
+
+Above your current `kitten.js` code, add the following code:
+
+```Javascript
+chrome.storage.sync.get("enable", function(result) {
+    console.log('Value currently is ' + result.enable)
+    if (result.enable) {
+```
+
+And adding closing off syntax, put this after your code:
+```
+  }
+});
+```
+We are getting the boolean value from storage here and passing in a callback, telling the script to execute only when the boolean is true.
+
+Reload your chrome extension in [chrome://extensions](chrome://extensions/). Navigate to any webpage and click the icon, turning it on and off. We can now use this extension only when needed!
+
 ## Summary / What you Learned
 
 * [X] What goes in a chrome extension manifest
