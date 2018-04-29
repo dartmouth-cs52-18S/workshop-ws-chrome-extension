@@ -14,6 +14,7 @@ In order to make google chrome sufficiently kitten-saturated, we'll do the follo
 * [ ] Replace all the image elements with kitten images
 * [ ] Replace text of choice on webpages
 * [ ] Create a pretty button to toggle your extension on and off
+
 All of this will be done with just a javascript file, a manifest.json, and lots of images!
 
 ## Setup
