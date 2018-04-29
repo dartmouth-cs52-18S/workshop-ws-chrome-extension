@@ -117,7 +117,7 @@ for (imgElt of imgs) {
 ```
 
 Now navigate back to [chrome://extensions](chrome://extensions) and hit refresh on the "Chrome ExTimsion" extension:
-![](readme_images/chrome_extension_refresh.png)
+![](readme_images/Extimsion_refresh.PNG)
 
 Navigate to any website (if you go to one that you already have opened make sure to refresh the page), and open up the inspector. You should see a list of the image sources!
 
