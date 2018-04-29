@@ -4,7 +4,7 @@ We don't need a new domain name to change the way we interact with the web! Toda
 
 ## Overview
 
-Chrome extensions allow us to personalize our web-browser, it's time to Timify the way we experience the internet if we so choose. With just a little bit of code, the sometimes-scary internet can be a much cuter place. Just clicking our custom chrome extension button in the top right of our browser replaces all a website's images with images of Tim, or anything else you choose!
+Chrome extensions allow us to personalize our web-browser, it's time to Timify the way we experience the internet if we so choose. With just a little bit of code, the sometimes-scary internet can be a much friendlier place. Just clicking our custom chrome extension button in the top right of our browser replaces all a website's images with images of Tim, or anything else you choose!
 
 <img src="https://media.giphy.com/media/1zlUuEFrTTz9n8XGCW/giphy.gif" width="800" height="400" />
 
@@ -43,7 +43,7 @@ All of this will be done with just a javascript file, a manifest.json, and lots 
 Let's take a step back and examine what's going on here. Chrome extensions can have background scripts and/or content scripts. Background scripts run in the background and can be always running or can be idle and only run when triggered. Content scripts run in the context of the web page that you are currently on. By setting `matches` to `<all_urls>`, we are saying that we want our extension to run on all web pages. The `js` part of the manifest lists all of the javascript files that we will be using as part of the content script.
 
 ### Add some Javascript!
-* Create a new file ```tim.js```
+* As hinted at in the manifest, we will now create a new file ```tim.js```
 * Add a ```console.log``` statement in this file, we will use this later to ensure it's working.
 ```Javascript
   console.log('Where\'s Tim???');
@@ -52,12 +52,13 @@ Let's take a step back and examine what's going on here. Chrome extensions can h
 ### Link to Chrome Extensions
 Now it's time to upload our extension to chrome!
 
-* Go to [chrome://extensions](chrome://extensions) and make sure *Developer mode* in the upper right hand corner is toggled on.
+* Go to [chrome://extensions](chrome://extensions/) and make sure *Developer mode* in the upper right hand corner is toggled on.
 ![](readme_images/developer-mode.png)
 
 * Click on *Load Unpacked* and select the directory that contains your chrome extension.
 
-:white_check_mark: Check-in! Navigate to any [website](http://cs52.me/) and inspect the page. In the console, your previous ```console.log``` statement should now appear!
+:white_check_mark: Check-in! Navigate to any [website](https://home.dartmouth.edu/) and inspect the page. In the console, your previous ```console.log``` statement should now appear!
+![](readme_images/tim_log.png)
 
 ### Find image elements to replace
 Let's take a moment to understand what we're looking for!
@@ -65,10 +66,12 @@ In the inspector console of the same page you just opened type
 ```javascript
   let imgs = document.getElementsByTagName('img');
 ```
-Call ```imgs``` and open the HTMLCollection to view all the images on the page.
+Then call ```imgs``` and open the HTMLCollection to view all the images on the page.
+![](readme_images/image_tags.png)
+
 Expand any image number to view the attributes of the image. Scroll down until you see ```src``` (attributes should be alphabetical). We will be using the ```img``` tag to find and replace the source of each images with your own pictures!
 
-Now you get to select your images! We have provided some default images in the img folder, but feel free to replace them with your own!
+Now you get to select your images! We have provided some default images in the img folder, but feel free to replace them with your own! You can fill your pages with unicorns or puppies or delicious food - whatever your heart desires!
 
 Whenever we have files inside the extension that we want to use (in this case, our pictures), we have to declare them inside ```manifest.json```.
 
@@ -95,11 +98,11 @@ We need an array containing the filenames of all of our images. Let's create tha
 
 ```Javascript
 let filenames = [
-  "img/tim1.jpg",
-  "img/tim2.jpg",
-  "img/tim3.jpg"
-  "img/tim4.jpg"
-  "img/tim5.jpg"
+  'img/tim1.jpg',
+  'img/tim2.jpg',
+  'img/tim3.jpg',
+  'img/tim4.jpg',
+  'img/tim5.jpg',
 ]
 ```
 
