@@ -249,31 +249,3 @@ Reload your chrome extension in [chrome://extensions](chrome://extensions/). Nav
 
 * Initial idea and starting code found at https://www.youtube.com/watch?v=8zMMOdI5SOk
 * A little starting example code: https://github.com/CodingTrain/website/tree/master/CodingChallenges/CC_82_Image_Chrome_Extension_The_Ex-Kitten-sion
-
-# Tim's Instructions for README
-
-
-* Explanations of the what **and** the why behind each step. Try to include:
-  * higher level concepts
-  * best practices
-
-Remember to explain any notation you are using.
-
-```javascript
-/* and use code blocks for any code! */
-```
-
-![screen shots are helpful](img/screenshot.png)
-
-:sunglasses: GitHub markdown files [support emoji notation](http://www.emoji-cheat-sheet.com/)
-
-Here's a resource for [github markdown](https://guides.github.com/features/mastering-markdown/).
-
-
-## Summary / What you Learned
-
-* [ ] can be checkboxes
-
-## Resources
-
-* cite any resources
