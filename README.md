@@ -141,7 +141,7 @@ Reload the chrome extension and navigate to a webpage. All the images there shou
 ### Replacing text
 Let's do some more replacement and just replace some text.
 
-Add this to `kitten.js`:
+Add this to `tim.js`:
 
 ```javascript
 let text = document.querySelectorAll('p,li,h1,h2,h3,h4,span,div,b');
@@ -206,7 +206,7 @@ chrome.browserAction.onClicked.addListener(function (tab) {
   enable = !enable;
   if (enable) {
     chrome.browserAction.setBadgeText({ text: 'ON' });
-    chrome.tabs.executeScript(null, { file: 'kitten.js' });
+    chrome.tabs.executeScript(null, { file: 'tim.js' });
   } else {
     chrome.browserAction.setBadgeText({ text: 'OFF' });
     chrome.tabs.executeScript(tab.id, {code: 'window.location.reload();'});
@@ -217,11 +217,11 @@ chrome.browserAction.onClicked.addListener(function (tab) {
  });
 ```
 
-We are passing a callback here that switches the state of our boolean variable. Based on the value of the variable, we set the badge text to on or off, and then either execute our `kitten.js` content script if it is on or reload the window if the extension is off. We then finally set the storage value to our newly changed boolean value.
+We are passing a callback here that switches the state of our boolean variable. Based on the value of the variable, we set the badge text to on or off, and then either execute our `tim.js` content script if it is on or reload the window if the extension is off. We then finally set the storage value to our newly changed boolean value.
 
-We need to also modify our `kitten.js` content script so that it only runs when the boolean value in storage is set to true. Let's hop over to `kitten.js` and add some modifications.
+We need to also modify our `tim.js` content script so that it only runs when the boolean value in storage is set to true. Let's hop over to `tim.js` and add some modifications.
 
-Above your current `kitten.js` code, add the following code:
+Above your current `tim.js` code, add the following code:
 
 ```Javascript
 chrome.storage.sync.get("enable", function(result) {
