@@ -114,8 +114,8 @@ Now we have all the images of the website in a variable and an array holding all
 If you said replace the current images with our own images, that's correct! We need a for-loop to loop through all of the current images. Let's just log the `src` of each image for now:
 
 ```Javascript
-for (imgElt of imgs) {
-  console.log(imgElt.src);
+for (imgElement of imgs) {
+  console.log(imgElement.src);
 }
 ```
 
@@ -124,17 +124,17 @@ Now navigate back to [chrome://extensions](chrome://extensions) and hit refresh 
 
 Navigate to any website (if you go to one that you already have opened make sure to refresh the page), and open up the inspector. You should see a list of the image sources!
 
-But don't we want to replace the current images? Yep, we do! Instead of logging the image sources, let's set the source to a random filename from our array of filenames. Replace `console.log(imgElt.src);` with this:
+But don't we want to replace the current images? Yep, we do! Instead of logging the image sources, let's set the source to a random filename from our array of filenames. Replace `console.log(imgElement.src);` with this:
 
 ```Javascript
   let r = Math.floor(Math.random() * filenames.length);
   let file = filenames[r];
   let url = chrome.runtime.getURL(file);
-  imgElt.src = url;
+  imgElement.src = url;
   console.log(url);
 ```
 
-What we are doing here is generating a random index into our array (the floor function makes sure that it is an integer), indexing into the array and grabbing that corresponding url, and setting the `src` of the image to that url. An interesting thing here is that we have to use `chrome.runtime.getURL`. We cannot just set `imgElt.src` equal to `file` because these files live inside our chrome extension and image sources need to be actual paths. `chrome.runtime.getURL` gives us back a valid URL of a file that is part of our chrome extension.
+What we are doing here is generating a random index into our array (the floor function makes sure that it is an integer), indexing into the array and grabbing that corresponding url, and setting the `src` of the image to that url. An interesting thing here is that we have to use `chrome.runtime.getURL`. We cannot just set `imgElement.src` equal to `file` because these files live inside our chrome extension and image sources need to be actual paths. `chrome.runtime.getURL` gives us back a valid URL of a file that is part of our chrome extension.
 
 Reload the chrome extension and navigate to a webpage. All the images there should be replaced by yours!
 
