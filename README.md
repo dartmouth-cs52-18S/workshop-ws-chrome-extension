@@ -4,12 +4,12 @@ We don't need a new domain name to change the way we interact with the web! Toda
 
 ## Overview
 
-Chrome extensions allow us to personalize our web-browser, it's time to kittenify the way we experience the internet if we so choose. With just a little bit of code, the sometimes-scary internet can be a much cuter place. Just clicking our custom chrome extension button in the top right of our browser replaces all a website's images with images of kittens, or anything else you choose!
+Chrome extensions allow us to personalize our web-browser, it's time to Timify the way we experience the internet if we so choose. With just a little bit of code, the sometimes-scary internet can be a much cuter place. Just clicking our custom chrome extension button in the top right of our browser replaces all a website's images with images of Tim, or anything else you choose!
 
 <img src="https://media.giphy.com/media/1zlUuEFrTTz9n8XGCW/giphy.gif" width="800" height="400" />
 
-In order to make google chrome sufficiently kitten-saturated, we'll do the following:
-* [ ] Replace all the image elements with kitten images
+In order to make google chrome sufficiently Tim-saturated, we'll do the following:
+* [ ] Replace all the image elements with images of Tim
 * [ ] Replace text of choice on webpages
 * [ ] Create a pretty button to toggle your extension on and off
 
@@ -27,7 +27,7 @@ All of this will be done with just a javascript file, a manifest.json, and lots 
 ```json
   {
     "manifest_version": 2,
-    "name": "Chrome Exkittension",
+    "name": "Chrome Extimsion",
     "version": "0.1",
     "content_scripts": [
         {
@@ -113,7 +113,7 @@ for (imgElt of imgs) {
 }
 ```
 
-Now navigate back to [chrome://extensions](chrome://extensions) and hit refresh on the "Chrome Exkittension" extension:
+Now navigate back to [chrome://extensions](chrome://extensions) and hit refresh on the "Chrome ExTimsion" extension:
 ![](readme_images/chrome_extension_refresh.png)
 
 Navigate to any website (if you go to one that you already have opened make sure to refresh the page), and open up the inspector. You should see a list of the image sources!
