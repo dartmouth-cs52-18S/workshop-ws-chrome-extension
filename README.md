@@ -6,7 +6,8 @@ Brief motivation here as well as in presentation
 
 ## Overview
 
-Summary of what we're about to do.
+Chrome extensions allow us to personalize our web-browser, it's time to kittenify the way we experience the internet if we so choose. With just a little bit of code, the sometimes-scary internet can be a much cuter place. Just clicking our custom chrome extension button in the top right of our browser replaces all a website's images with images of kittens, or anything else you choose!
+![](http://g.recordit.co/jeN6QBJMQO.gif)
 
 ## Setup
 
