@@ -147,7 +147,7 @@ let text = document.querySelectorAll('p,li,h1,h2,h3,h4,span,div,b');
       }
 ```
 
-We are grabbing all of the HTML structures that display text and replacing it similar to how we replaced images.
+We are grabbing all of the HTML structures that display text and replacing all capitalized words using a regex expression in a similar manner to how we replaced images.
 
 ### Adding A button
 
