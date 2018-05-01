@@ -8,13 +8,13 @@ Do you ever miss seeing Tim bewtween classes?
 
 We do!
 
-Chrome extensions allow us to personalize our web-browser, it's time to Timify the way we experience the internet. With just a little bit of code, the sometimes-scary internet can be a much friendlier place. Just clicking our custom chrome extension button in the top right of our browser replaces all a website's images with images of Tim, or anything else you choose!
+Chrome extensions allow us to personalize our web-browser, it's time to Timify the way we experience the internet. With just a little bit of code, the sometimes-scary internet can be a much friendlier place. Just clicking our custom chrome extension button in the top right of our browser replaces all a website's images with images of Tim... or kittens!
 
 <img src="https://media.giphy.com/media/1zlUuEFrTTz9n8XGCW/giphy.gif" width="800" height="400" />
 
 In order to make google chrome sufficiently Tim-saturated, we'll do the following:
 * [ ] Replace all the image elements with images of Tim
-* [ ] Replace text of choice on webpages
+* [ ] Replace text of choice on webpages to 'Tim!'
 * [ ] Create a pretty button to toggle your extension on and off
 
 All of this will be done with just a javascript file, a manifest.json, and lots of images!
@@ -26,7 +26,7 @@ All of this will be done with just a javascript file, a manifest.json, and lots 
 ## Step by Step
 
 ### Create Manifest
-* Create a ```manifest.json``` file in your directory.
+* Create a ```manifest.json``` file in your directory. ```manifest.json``` is kind of like the ```package.json``` that we've been working with.
 
 ```json
   {
