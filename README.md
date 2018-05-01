@@ -64,6 +64,7 @@ Now it's time to upload our extension to chrome!
 ![](readme_images/load_unpacked.png)
 
 * Make sure you turn on chrome extension. If there is an error in the code, it will give you an error message and not let you turn it on.
+
 ![](readme_images/turn_on.png)
 
 :white_check_mark: Check-in! Navigate to another [website](https://home.dartmouth.edu/) (load a new tab) and inspect the page. In the console, your previous ```console.log``` statement should now appear!
