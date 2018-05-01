@@ -80,7 +80,7 @@ Then call ```imgs``` and open the HTMLCollection to view all the images on the p
 
 Expand any image number to view the attributes of the image. Scroll down until you see ```src``` (attributes should be alphabetical). We will be using the ```img``` tag to find and replace the source of each images with your own pictures!
 
-Now you get to select your images! We have provided some default images in the img folder, but feel free to replace them with your own! You can fill your pages with unicorns or puppies or delicious food - whatever your heart desires!
+Now you get to select your images! We have provided some default images of Tim in the img folder, but feel free to replace them with your own! You can fill your pages with unicorns or puppies or delicious food - whatever your heart desires (but why wouldn't you want to use these gems?)!
 
 Whenever we have files inside the extension that we want to use (in this case, our pictures), we have to declare them inside ```manifest.json```.
 
@@ -143,7 +143,7 @@ But don't we want to replace the current images? Yep, we do! Instead of logging 
 
 What we are doing here is generating a random index into our array (the floor function makes sure that it is an integer), indexing into the array and grabbing that corresponding url, and setting the `src` of the image to that url. An interesting thing here is that we have to use `chrome.runtime.getURL`. We cannot just set `imgElement.src` equal to `file` because these files live inside our chrome extension and image sources need to be actual paths. `chrome.runtime.getURL` gives us back a valid URL of a file that is part of our chrome extension.
 
-Reload the chrome extension and navigate to a webpage. All the images there should be replaced by yours!
+Reload the chrome extension and navigate to a webpage. All the images there should be replaced by images of Tims (or whatever images you used)!
 
 ### Replacing text
 Let's do some more replacement and just replace some text.
