@@ -126,9 +126,10 @@ for (imgElement of imgs) {
 ```
 
 Now navigate back to [chrome://extensions](chrome://extensions) and hit refresh on the "Chrome ExTimsion" extension:
-![](readme_images/chrome_extension_refresh.png)
+![](readme_images/chrome_extension_refresh.png)  
+Every time you make a change to your code, you need to click this refresh button.
 
-Navigate to any website (if you go to one that you already have opened make sure to refresh the page), and open up the inspector. You should see a list of the image sources!
+Navigate to any website (if you go to one that you already have opened make sure to refresh the page so it reloads the extension), and open up the inspector. You should see a list of the image sources!
 
 But don't we want to replace the current images? Yep, we do! Instead of logging the image sources, let's set the source to a random filename from our array of filenames. Replace `console.log(imgElement.src);` with this:
 
