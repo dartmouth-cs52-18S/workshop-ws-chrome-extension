@@ -198,7 +198,7 @@ chrome.browserAction.setBadgeText({ text: 'OFF' });
 ```
 
 Here, we are making it so that our icon shows when the extension is on and off. Reload the extension in [chrome://extensions](chrome://extensions/), and the icon should show up with "OFF" over it.  
-![](readme_images/tim_icon.png)  
+![](readme_images/tim_off.png)  
 
 We will be using a boolean and using the value of the boolean as the switch between the on and off states. Add the following to `background.js` after what you already have:
 
