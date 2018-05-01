@@ -61,6 +61,7 @@ Now it's time to upload our extension to chrome!
 ![](readme_images/developer-mode.png)
 
 * Click on *Load Unpacked* and select the directory that contains your chrome extension.
+![](readme_images/load_unpacked.png)
 
 :white_check_mark: Check-in! Navigate to another [website](https://home.dartmouth.edu/) (load a new tab) and inspect the page. In the console, your previous ```console.log``` statement should now appear!
 ![](readme_images/tim_log.png)
