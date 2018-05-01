@@ -34,7 +34,7 @@ All of this will be done with just a javascript file, a manifest.json, and lots 
         "matches": [
           "<all_urls>"
         ],
-        "js": ["tim.js"]
+        "js": ["img/tim.js"]
       }
     ],
     "icons": { "48": "tim.png" }
