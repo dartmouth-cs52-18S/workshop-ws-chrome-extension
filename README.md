@@ -179,7 +179,7 @@ We also want a default icon for our extension, so add the following after `backg
 ```json
 "browser_action": {
     "default_icon": "img/tim.png"
-  }
+  },
 ```
 
 Cool, we're done with the manifest! Let's move on to the background script. Create a `background.js` and add the following to it:
