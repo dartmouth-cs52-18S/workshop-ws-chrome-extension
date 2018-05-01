@@ -4,13 +4,13 @@ We don't need a new domain name to change the way we interact with the web! Toda
 
 ## Overview
 
-Do you ever miss seeing Tim bewtween classes?
+Do you ever miss seeing Tim between classes?
 
 We do!
 
-Chrome extensions allow us to personalize our web-browser, it's time to Timify the way we experience the internet. With just a little bit of code, the sometimes-scary internet can be a much friendlier place. Just clicking our custom chrome extension button in the top right of our browser replaces all a website's images with images of Tim... or kittens!
+Chrome extensions allow us to personalize our web-browser, it's time to Timify the way we experience the internet. With just a little bit of code, the sometimes-scary internet can be a much friendlier place. Just clicking our custom chrome extension button in the top right of our browser replaces all a website's images with images of Tim!
 
-<img src="https://media.giphy.com/media/1zlUuEFrTTz9n8XGCW/giphy.gif" width="800" height="400" />
+<img src="https://media.giphy.com/media/7FfKUZiWxPeQShj4SZ/giphy.gif" width="800" height="400" />
 
 In order to make google chrome sufficiently Tim-saturated, we'll do the following:
 * [ ] Replace all the image elements with images of Tim
