@@ -34,10 +34,10 @@ All of this will be done with just a javascript file, a manifest.json, and lots 
         "matches": [
           "<all_urls>"
         ],
-        "js": ["img/tim.js"]
+        "js": ["tim.js"]
       }
     ],
-    "icons": { "48": "tim.png" }
+    "icons": { "48": "img/tim.png" }
   }
 ```
 
@@ -202,7 +202,7 @@ We are using chrome's storage to keep track of the state of this boolean. We wan
 ```Javascript
 chrome.browserAction.onClicked.addListener(function (tab) {
   enable = !enable;
-  
+
   if (enable) {
     chrome.browserAction.setBadgeText({ text: 'ON' });
     chrome.tabs.executeScript(null, { file: 'tim.js' });
@@ -210,7 +210,7 @@ chrome.browserAction.onClicked.addListener(function (tab) {
     chrome.browserAction.setBadgeText({ text: 'OFF' });
     chrome.tabs.executeScript(tab.id, {code: 'window.location.reload();'});
   }
-  
+
   chrome.storage.sync.set({"enable": enable}, function() {
        console.log('Value is set to ' + enable);
    });
