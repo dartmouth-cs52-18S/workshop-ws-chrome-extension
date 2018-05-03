@@ -154,9 +154,9 @@ Let's do some more replacement and just replace some text.
 
 ```javascript
 let text = document.querySelectorAll('p,li,h1,h2,h3,h4,span,div,b');
-      for (element of text) {
-      element.innerHTML = element.innerHTML.replace(/\b([A-Z]\w*)\b/g,'Tim!');
-      }
+for (element of text) {
+  element.innerHTML = element.innerHTML.replace(/\b([A-Z]\w*)\b/g,'Tim!');
+}
 ```
 
 We are grabbing all of the HTML structures that display text and replacing all capitalized words using a regex expression in a similar manner to how we replaced images.
@@ -167,12 +167,12 @@ We are grabbing all of the HTML structures that display text and replacing all c
 
 ```json
 "permissions": [
-      "tabs",
-      "storage",
-      "notifications",
-      "http://*/",
-      "https://*/"
-  ],
+  "tabs",
+  "storage",
+  "notifications",
+  "http://*/",
+  "https://*/"
+],
 ```
 
 This tells the browser that your extension will be using various parts of the Google Chrome API, like storage and tabs.
@@ -181,16 +181,16 @@ This tells the browser that your extension will be using various parts of the Go
 
 ``` json
 "background": {
-    "scripts": ["background.js"]
-  },
+  "scripts": ["background.js"]
+},
 ```
 
 * We also want a default icon for our extension, so add the following after `background`:
 
 ```json
 "browser_action": {
-    "default_icon": "img/tim.png"
-  },
+  "default_icon": "img/tim.png"
+},
 ```
 
 Cool, we're done with the manifest! Let's move on to the background script. 
@@ -228,9 +228,9 @@ chrome.browserAction.onClicked.addListener(function (tab) {
   }
 
   chrome.storage.sync.set({"enable": enable}, function() {
-       console.log('Value is set to ' + enable);
-   });
- });
+    console.log('Value is set to ' + enable);
+  });
+});
 ```
 
 We are passing a callback here that switches the state of our boolean variable. Based on the value of the variable, we set the badge text to on or off, and then either execute our `tim.js` content script if it is on or reload the window if the extension is off. We then finally set the storage value to our newly changed boolean value.
@@ -241,8 +241,8 @@ We need to also modify our `tim.js` content script so that it only runs when the
 
 ```Javascript
 chrome.storage.sync.get("enable", function(result) {
-    console.log('Value currently is ' + result.enable)
-    if (result.enable) {
+  console.log('Value currently is ' + result.enable)
+  if (result.enable) {
 ```
 
 * And adding closing off syntax, put this after your code:
