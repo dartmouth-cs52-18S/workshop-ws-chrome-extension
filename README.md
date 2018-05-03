@@ -71,11 +71,11 @@ Now it's time to upload our extension to chrome!
 
 ### Find image elements to replace
 Let's take a moment to understand what we're looking for!
-In the inspector console of the same page you just opened type
+* In the inspector console of the same page you just opened, type
 ```javascript
   let imgs = document.getElementsByTagName('img');
 ```
-Then call ```imgs``` and open the HTMLCollection to view all the images on the page.
+* Then call ```imgs``` and open the HTMLCollection to view all the images on the page.
 ![](readme_images/image_tags.png)
 
 Expand any image number to view the attributes of the image. Scroll down until you see ```src``` (attributes should be alphabetical). We will be using the ```img``` tag to find and replace the source of each images with your own pictures!
@@ -84,7 +84,7 @@ Now you get to select your images! We have provided some default images of Tim i
 
 Whenever we have files inside the extension that we want to use (in this case, our pictures), we have to declare them inside ```manifest.json```.
 
-Add the following in ```manifest.json``` before `content_scripts` :
+* Add the following in ```manifest.json``` before `content_scripts` :
 
 ```json
 "web_accessible_resources": [
@@ -97,13 +97,14 @@ This tells the manifest that we want the browser to be able to access these all 
 
 We've played around in the inspector and understand what we are looking for. Let's code it up in our extension project.
 
-We want to gather all of the images on the page into a variable, just like we did in the inspector. Add the following to `tim.js`:
+We want to gather all of the images on the page into a variable, just like we did in the inspector.  
+* Add the following to `tim.js`:
 
 ```javascript
   let imgs = document.getElementsByTagName('img');
 ```
 
-We need an array containing the filenames of all of our images. Let's create that! Somewhere before you create the `imgs` variable, create a variable that references an array containing your image filenames:
+* We need an array containing the filenames of all of our images. Let's create that! Somewhere before you create the `imgs` variable, create a variable that references an array containing your image filenames:
 
 ```Javascript
 let filenames = [
@@ -117,7 +118,7 @@ let filenames = [
 
 Now we have all the images of the website in a variable and an array holding all our image filenames. What do we need to do now?
 
-If you said replace the current images with our own images, that's correct! We need a for-loop to loop through all of the current images. Let's just log the `src` of each image for now:
+* If you said replace the current images with our own images, that's correct! We need a for-loop to loop through all of the current images. Let's just log the `src` of each image for now:
 
 ```Javascript
 for (imgElement of imgs) {
@@ -125,13 +126,14 @@ for (imgElement of imgs) {
 }
 ```
 
-Now navigate back to [chrome://extensions](chrome://extensions) and hit refresh on the "Chrome ExTimsion" extension:
+* Now navigate back to [chrome://extensions](chrome://extensions) and hit refresh on the "Chrome ExTimsion" extension:
 ![](readme_images/chrome_extension_refresh.png)  
 Every time you make a change to your code, you need to click this refresh button.
 
-Navigate to any website (if you go to one that you already have opened make sure to refresh the page so it reloads the extension), and open up the inspector. You should see a list of the image sources!
+* Navigate to any website (if you go to one that you already have opened make sure to refresh the page so it reloads the extension), and open up the inspector. You should see a list of the image sources!
 
-But don't we want to replace the current images? Yep, we do! Instead of logging the image sources, let's set the source to a random filename from our array of filenames. Replace `console.log(imgElement.src);` with this:
+But don't we want to replace the current images? Yep, we do! Instead of logging the image sources, let's set the source to a random filename from our array of filenames.  
+* Replace `console.log(imgElement.src);` with this:
 
 ```Javascript
   let r = Math.floor(Math.random() * filenames.length);
@@ -143,12 +145,12 @@ But don't we want to replace the current images? Yep, we do! Instead of logging 
 
 What we are doing here is generating a random index into our array (the floor function makes sure that it is an integer), indexing into the array and grabbing that corresponding url, and setting the `src` of the image to that url. An interesting thing here is that we have to use `chrome.runtime.getURL`. We cannot just set `imgElement.src` equal to `file` because these files live inside our chrome extension and image sources need to be actual paths. `chrome.runtime.getURL` gives us back a valid URL of a file that is part of our chrome extension.
 
-Reload the chrome extension and navigate to a webpage. All the images there should be replaced by images of Tims (or whatever images you used)!
+* Reload the chrome extension and navigate to a webpage. All the images there should be replaced by images of Tims (or whatever images you used)!
 
 ### Replacing text
 Let's do some more replacement and just replace some text.
 
-Add this to `tim.js`:
+* Add this to `tim.js`:
 
 ```javascript
 let text = document.querySelectorAll('p,li,h1,h2,h3,h4,span,div,b');
@@ -161,7 +163,7 @@ We are grabbing all of the HTML structures that display text and replacing all c
 
 ### Adding A button
 
-We want to be able to turn this extension on and off. Let's go into `manifest.json` and add the following code after `web_accessible_resources` and before `content_scripts`:
+* We want to be able to turn this extension on and off. Let's go into `manifest.json` and add the following code after `web_accessible_resources` and before `content_scripts`:
 
 ```json
 "permissions": [
@@ -175,7 +177,7 @@ We want to be able to turn this extension on and off. Let's go into `manifest.js
 
 This tells the browser that your extension will be using various parts of the Google Chrome API, like storage and tabs.
 
-We will also be using a background script, so add the following to `manifest.json` after `content_scripts`:
+* We will also be using a background script, so add the following to `manifest.json` after `content_scripts`:
 
 ``` json
 "background": {
@@ -183,7 +185,7 @@ We will also be using a background script, so add the following to `manifest.jso
   },
 ```
 
-We also want a default icon for our extension, so add the following after `background`:
+* We also want a default icon for our extension, so add the following after `background`:
 
 ```json
 "browser_action": {
@@ -191,23 +193,27 @@ We also want a default icon for our extension, so add the following after `backg
   },
 ```
 
-Cool, we're done with the manifest! Let's move on to the background script. Create a `background.js` and add the following to it:
+Cool, we're done with the manifest! Let's move on to the background script. 
+* Create a `background.js` and add the following to it:
 
 ```javascript
 chrome.browserAction.setBadgeText({ text: 'OFF' });
 ```
 
-Here, we are making it so that our icon shows when the extension is on and off. Reload the extension in [chrome://extensions](chrome://extensions/), and the icon should show up with "OFF" over it.  
+Here, we are making it so that our icon shows when the extension is on and off.  
+* Reload the extension in [chrome://extensions](chrome://extensions/), and the icon should show up with "OFF" over it.  
 ![](readme_images/tim_off.png)  
 
-We will be using a boolean and using the value of the boolean as the switch between the on and off states. Add the following to `background.js` after what you already have:
+We will be using a boolean and using the value of the boolean as the switch between the on and off states.  
+* Add the following to `background.js` after what you already have:
 
 ```javascript
 var enable=false;
 chrome.storage.sync.set({"enable": enable});
 ```
 
-We are using chrome's storage to keep track of the state of this boolean. We want to change the state of this boolean when we click on the icon. Let's add an onClick Listener to the icon, passing into it a callback that gets executed:
+We are using chrome's storage to keep track of the state of this boolean. We want to change the state of this boolean when we click on the icon. 
+* Let's add an onClick Listener to the icon, passing into it a callback that gets executed:  
 
 ```Javascript
 chrome.browserAction.onClicked.addListener(function (tab) {
@@ -231,7 +237,7 @@ We are passing a callback here that switches the state of our boolean variable. 
 
 We need to also modify our `tim.js` content script so that it only runs when the boolean value in storage is set to true. Let's hop over to `tim.js` and add some modifications.
 
-Above your current `tim.js` code, add the following code:
+* Above your current `tim.js` code, add the following code:
 
 ```Javascript
 chrome.storage.sync.get("enable", function(result) {
@@ -239,14 +245,14 @@ chrome.storage.sync.get("enable", function(result) {
     if (result.enable) {
 ```
 
-And adding closing off syntax, put this after your code:
+* And adding closing off syntax, put this after your code:
 ```
   }
 });
 ```
 We are getting the boolean value from storage here and passing in a callback, telling the script to execute only when the boolean is true.
 
-Reload your chrome extension in [chrome://extensions](chrome://extensions/). Navigate to any webpage and click the icon, turning it on and off. We can now use this extension only when needed!
+* Reload your chrome extension in [chrome://extensions](chrome://extensions/). Navigate to any webpage and click the icon, turning it on and off. We can now use this extension only when needed!
 
 ## Summary / What you Learned
 
